@@ -8,7 +8,8 @@ const app = express();
 // Enable strict routing so trailing-slash variants are treated as distinct routes:
 // "/good-evening" returns content, while "/good-evening/" falls through to Express's
 // default 404 handler. This keeps the routing contract explicit - only the registered
-// paths "/" and "/good-evening" return content; every other path returns 404 Not Found.
+// paths "/" and "/good-evening" return content, matched case-insensitively, so a case
+// variant such as "/GOOD-EVENING" is served too; every other path returns 404 Not Found.
 app.enable('strict routing');
 
 app.get('/', (req, res) => {

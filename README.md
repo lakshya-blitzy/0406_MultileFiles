@@ -9,7 +9,8 @@ The server is built with the [Express.js](https://expressjs.com/) web framework
 - `GET /` — `200 OK`, `Content-Type: text/plain`, body `Hello, World!\n`
 - `GET /good-evening` — `200 OK`, `Content-Type: text/plain`, body `Good evening`
 
-Any other path returns `404 Not Found`.
+Any other path returns `404 Not Found` (route matching is case-insensitive, so a
+case variant such as `/GOOD-EVENING` still matches `/good-evening`).
 
 ## Running
 
